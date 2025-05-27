@@ -1,0 +1,101 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "legend": {
+        "displayMode": "list",
+        "placement": "bottom"
+      },
+      "targets": [
+        {
+          "expr": "model_prediction",
+          "format": "time_series",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "Predicción",
+          "refId": "A"
+        }
+      ],
+      "title": "Predicción del Modelo",
+      "type": "timeseries"
+    },
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 2,
+      "legend": {
+        "displayMode": "list",
+        "placement": "bottom"
+      },
+      "targets": [
+        {
+          "expr": "inference_duration_seconds",
+          "format": "time_series",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "Duración Inferencia",
+          "refId": "A"
+        }
+      ],
+      "title": "Duración de la Inferencia (segundos)",
+      "type": "timeseries"
+    }
+  ],
+  "schemaVersion": 37,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Dashboard Modelo Series Temporales",
+  "uid": "modelo_series_temporales",
+  "version": 1
+}
